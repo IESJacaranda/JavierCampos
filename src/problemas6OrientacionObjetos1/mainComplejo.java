@@ -18,6 +18,7 @@ public class mainComplejo {
 				+ "3.Comparar numeros complejos.\n"
 				+ "4.Salir.\n");
 		
+		
 		System.out.println("Introduce primero la parte real del primer numero");
 		parteReal1=Double.parseDouble(teclado.nextLine());
 		

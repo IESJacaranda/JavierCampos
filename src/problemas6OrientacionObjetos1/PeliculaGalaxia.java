@@ -12,12 +12,16 @@ public class PeliculaGalaxia {
 	
 	//Constructores
 	
-	public PeliculaGalaxia(){}
-	public int getYearEstreno() {
-		return yearEstreno;
-	}
+	public PeliculaGalaxia() {}
 	public void setYearEstreno(int yearEstreno) {
 		this.yearEstreno = yearEstreno;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public PeliculaGalaxia(String nombre, int yearEstreno, String personajeImportante1, String personajeImportante2, String personajeImportante3){
 		this.nombre=nombre;
@@ -29,22 +33,21 @@ public class PeliculaGalaxia {
 	
 	//Metodos
 	
-	public String peliculaMasNueva(int yearEstreno1, int yearEstreno2) throws Exception {
+	
+	public String peliculaMasNueva(PeliculaGalaxia pelicula2) {
 		String resultado;
-		if (yearEstreno1<0 || yearEstreno2<0) {
-			throw new Exception("Los años introducidos no son válidos");
+		if (this.yearEstreno>pelicula2.getYearEstreno()) {
+			resultado="La pelicula " +this.nombre + " es mas moderna que "+ pelicula2.getNombre();
 		}
-		else if (yearEstreno1>yearEstreno2) {
-			resultado="El la primera pelicula es mas moderna que la segunda ";
-		}
-		else if (yearEstreno1 < yearEstreno2) {
-			resultado="La primera película es más antigua que la segunda";
+		else if (this.yearEstreno<pelicula2.getYearEstreno()) {
+			resultado="La pelicula " + getNombre()+ " es mas moderna que "+ this.nombre;
 		}
 		else {
-			resultado="Las dos peliculas son del mismo año";
+			resultado="Las peliculas son de la misma fecha";
 		}
-
 		return resultado;
+
+		
 	}
 	
 	public String poderMaximoPersonajes(int poderPersonaje1, int poderPersonaje2, int poderPersonaje3) {

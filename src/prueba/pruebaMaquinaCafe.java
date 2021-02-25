@@ -37,14 +37,14 @@ public class pruebaMaquinaCafe {
 		System.out.println("El cafe cuesta: "+ PRECIO_CAFE+ " introduzca el pago: ");
 		this.pago = Double.parseDouble(teclado.nextLine());
 		if (this.depositoCafe<= 0 || this.depositoVasos<=0) {
-			throw new Exception("No es posible servir porque no nos quedan existencias")
-			this.resultado="No es posible servir el cafe porque no nos quedan existencias"
+			throw new Exception("No es posible servir porque no nos quedan existencias");
+			
 		}
 		else if (pago<PRECIO_CAFE) {
 			throw new Exception("La cantidad introducida no es suficiente");
 		}
-		else if ()
-		}
-	
+		return resultado;
+		
+	}	
 
 }

@@ -9,6 +9,14 @@ public class PersonajeGalaxia {
 	private String especie;
 	private double peso;
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	//Constructores 
 	public PersonajeGalaxia() {}
 
@@ -25,6 +33,11 @@ public class PersonajeGalaxia {
 		this.peso = peso;
 	}
 	
+	
+	/**
+	 * El   método   toString   del   personaje   debe   mostrar   el   nombre,   la   estatura,   
+	 * la   especie,   y   acontinuación lo que sea mayor, la capacidad de destrucción o el peso
+	 */
 	@Override 
 	public String toString() {
 		double opcionMayor;

@@ -71,7 +71,7 @@ public boolean equals(Object obj) {
 	else if(obj!=null && obj instanceof Producto && ((Producto)obj).hashCode()==this.hashCode()){
 		sonIguales=true;
 	}
-	return super.equals(obj);
+	return sonIguales;
 }
 
 @Override

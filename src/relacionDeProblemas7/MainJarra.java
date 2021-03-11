@@ -36,7 +36,7 @@ public class MainJarra {
 					A.llenarJarra();
 				} catch (Exception e) {
 					
-					System.out.println(e);
+					System.out.println(e.getMessage());
 				}
 			}
 			else {

@@ -61,65 +61,89 @@ public static void imprimirMatrix(int[][] matriz) {
 		
 			
 		}
+
+//Imprimir vectores
+public static void imprimirVector(int[] vector) {
+	
+	
 	
 
-public static void ejercicio3() {
-	boolean igualdad=false;
-	
-	int[][] matriz = {{1,2,3,4},{2,5,6,7},{1,3,4,5},{2,3,4,5}};
-	int[][] matriz2 = {{1,2,3,4},{2,5,6,7},{1,3,4,5},{2,3,4,5}};
-	
-	
-	if (matriz.length==matriz2.length) {
-		for(int i=0; i<matriz.length;i++) {
-			if(matriz[i].length==matriz2[i].length) {
-				igualdad=true;
-				}
-			else {
-				igualdad=false;
-			}
-		}
-	}
-		
-	if (igualdad==true) {
 	StringBuilder cadena= new StringBuilder();
-	int contador=0;
+
 	
 
-	for (int i=0; i<matriz.length; i++) {
-		for (int j=0; j<matriz[i].length; j++) {
-			if (contador==i) {
-				if(j+1<matriz[i].length) {
-					
-					cadena.append(matriz[i][j]+matriz[i][j]+",");
-				}
-				else {
-					cadena.append(matriz[i][j]+matriz[i][j]);
-				}
+	for (int i=0; i<vector.length; i++) {
+			if (i+1<vector.length) {
+				
 
+					cadena.append(vector[i]+",");
+				
 			}
 			else {
-				
-				cadena=new StringBuilder();
-				cadena.append(matriz[i][j]+matriz[i][j]+",");
-				contador++;
-				
+				cadena.append(vector[i]);
 			}
 			
 		
+		
+	}
+	System.out.println("["+ cadena +"]");
+		
+			
 		}
-		System.out.println("["+ cadena +"]");
-	}
 	
+//Ejercicio 3
+public static int[][]sumarMatrices(int[][]matrizA, int[][]matrizB) {
+	
+	
+	int[][]resultado=new int[matrizA.length][matrizA[0].length];
+	
+	
+	if (matrizA.length==matrizB.length && matrizA[0].length==matrizB[0].length) {
+		
+		
+			for(int i=0; i<matrizA.length;i++) {
+				for(int j=0; j<matrizA[i].length;j++) {
+					resultado[i][j]=matrizA[i][j]+matrizB[i][j];
+				}
+			}
+		
 	}
-	else {
-		System.out.println("No son iguales");
+		
+	return resultado;
+}
+	
+	
+
+//Ejercicio 4
+public static int[] concatenarMatriz(int[] listaA, int[] listaB){
+	int[]resultado = new int[listaA.length+listaB.length];
+	
+	
+	for (int i=0; i<listaA.length; i++) {
+		
+			resultado[i]=listaA[i];
+		
+	}
+	for (int i=0; i<listaB.length; i++) {
+		
+		resultado[i+listaA.length]=listaB[i];
+	
+}
+	
+	return resultado;
+}
+
+//Ejercicio 5
+public static boolean rotarMatriz (int[][]matriz, int[][]matrizRotada) {
+	if (matriz.length==matrizRotada.length && matriz[0].length==matrizRotada[0].length) {
+		
 		
 	}
 	
 	
-	}
-
+	boolean resultado=false;
+	return resultado;
+}
 
 	
 	
@@ -129,8 +153,13 @@ public static void ejercicio3() {
 		
 
 	public static void main(String[] args) {
-		int[][] matriz = {{1,2,3,4},{2,5,6,7},{1,3,4,5},{2,3,4,5}};
-		imprimirMatrix(matriz);
+		int[][] matrizA = {{1,2,3,4},{2,5,6,7}};
+		int[][] matrizB = {{1,2,3,4},{2,5,6,7}};
+		int[] listaA= {1,2,3,4};
+		int[] listaB= {1,2,3,4};
+		
+		//imprimirVector(concatenarMatriz(listaA, listaB));
+		imprimirMatrix(sumarMatrices(matrizA, matrizB));
 	
 
 	}

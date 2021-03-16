@@ -149,6 +149,37 @@ public static int[][] rotarMatriz (int[][]matriz) {
 		
 	}
 
+public static boolean compararMatriz(int[][] matriz, int[][]matrizAComparar) {
+	boolean resultado = true;
+	
+	if(matriz!=null && matrizAComparar!=null && matriz.length==matrizAComparar.length) {
+		for (int i=0; i<matriz.length; i++) {
+			for(int j=0; j<matriz[i].length; j++) {
+				if (resultado==true) {
+					if(matriz[i][j]!= matrizAComparar[i][j]) {
+						resultado=false;
+					}
+				}
+			}
+		}
+	}
+	else {
+		resultado=false;
+	}
+	
+	return resultado;
+}
+
+
+public static boolean compararMatrizRotada(int[][] matriz, int[][]matrizAComparar) {
+	
+	return(compararMatriz(matriz, matrizAComparar) || compararMatriz(rotarMatriz(matriz), matrizAComparar)
+			|| compararMatriz(rotarMatriz(rotarMatriz(matriz)), matrizAComparar)
+			|| compararMatriz(rotarMatriz(rotarMatriz(rotarMatriz(matriz))), matrizAComparar));
+		
+	
+	
+}
 
 	
 	
@@ -167,14 +198,16 @@ public static int[][] rotarMatriz (int[][]matriz) {
 		int[][] matrizB = {{1,2,3,4},{2,5,6,7}};
 		int[] listaA= {1,2,3,4};
 		int[] listaB= {1,2,3,4};
-		int [][] matriz= {{1,2,3},{3,4,1},{1,3,5}};
-		int [][] matrizRotada= {{3,1,5},{4,2,6}};
+		int [][] matriz= {{3,1,0},{0,2,4},{0,5,1}};
+		int [][] matrizRotadaD= {{0,0,3},{5,2,1},{1,4,0}};
+		int [][] matrizRotadaI= {{0,4,1},{1,2,5},{3,0,0}};
 		
 		
 		//imprimirVector(concatenarMatriz(listaA, listaB));
 		//imprimirMatrix(sumarMatrices(matrizA, matrizB));
 		imprimirMatrix((rotarMatriz(matriz)));
-	
+		System.out.println(compararMatrizRotada(matrizA, matrizB));
+		System.out.println(compararMatrizRotada(matriz, matrizRotadaI));
 
 	}
 

@@ -134,16 +134,25 @@ public static int[] concatenarMatriz(int[] listaA, int[] listaB){
 }
 
 //Ejercicio 5
-public static boolean rotarMatriz (int[][]matriz, int[][]matrizRotada) {
-	if (matriz.length==matrizRotada.length && matriz[0].length==matrizRotada[0].length) {
-		
+public static int[][] rotarMatriz (int[][]matriz) {
+	
+	
+	
+	int[][] rotada= new int[matriz.length][matriz.length];
+	
+	for(int i=0; i<matriz.length; i++) {
+		for(int j=0; j<matriz[i].length; j++) {
+			rotada[j][matriz.length-1-i] = matriz[i][j]; //La columna pasa a ser fila y el primer valor pasa a ser el ultimo
+		}
+	}
+		return rotada;
 		
 	}
+
+
 	
 	
-	boolean resultado=false;
-	return resultado;
-}
+
 
 	
 	
@@ -153,13 +162,18 @@ public static boolean rotarMatriz (int[][]matriz, int[][]matrizRotada) {
 		
 
 	public static void main(String[] args) {
+		
 		int[][] matrizA = {{1,2,3,4},{2,5,6,7}};
 		int[][] matrizB = {{1,2,3,4},{2,5,6,7}};
 		int[] listaA= {1,2,3,4};
 		int[] listaB= {1,2,3,4};
+		int [][] matriz= {{1,2,3},{3,4,1},{1,3,5}};
+		int [][] matrizRotada= {{3,1,5},{4,2,6}};
+		
 		
 		//imprimirVector(concatenarMatriz(listaA, listaB));
-		imprimirMatrix(sumarMatrices(matrizA, matrizB));
+		//imprimirMatrix(sumarMatrices(matrizA, matrizB));
+		imprimirMatrix((rotarMatriz(matriz)));
 	
 
 	}

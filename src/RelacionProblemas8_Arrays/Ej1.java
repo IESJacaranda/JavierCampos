@@ -20,6 +20,7 @@ public class Ej1 {
 		 }
 		 EjerciciosMatrices.imprimirVector(lista);
 		
+		 teclado.close();
 		}
 
 	}

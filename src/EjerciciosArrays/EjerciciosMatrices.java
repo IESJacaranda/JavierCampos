@@ -181,6 +181,21 @@ public static boolean compararMatrizRotada(int[][] matriz, int[][]matrizACompara
 	
 }
 
+
+
+//Ejercicio 6 Rotar matrices no cuadradas
+
+public static int[][] rotarMatrizNoCuadrada(int[][] matriz){
+	int[][] matrizRotada = new int[matriz[0].length][matriz.length];
+	for(int i=0; i<matriz.length; i++) {
+		for(int j=0; j<matriz[i].length; j++) {
+			matrizRotada[j][matriz.length-1-i] = matriz[i][j]; //La columna pasa a ser fila y el primer valor pasa a ser el ultimo
+		}
+	}
+		return matrizRotada;
+	
+}
+
 	
 	
 
@@ -199,13 +214,13 @@ public static boolean compararMatrizRotada(int[][] matriz, int[][]matrizACompara
 		int[] listaA= {1,2,3,4};
 		int[] listaB= {1,2,3,4};
 		int [][] matriz= {{3,1,0},{0,2,4},{0,5,1}};
-		int [][] matrizRotadaD= {{0,0,3},{5,2,1},{1,4,0}};
+		int [][] matrizRotadaD= {{0,0,3},{5,2,1},{1,4,0},{1,4,0}};
 		int [][] matrizRotadaI= {{0,4,1},{1,2,5},{3,0,0}};
 		
 		
 		//imprimirVector(concatenarMatriz(listaA, listaB));
 		//imprimirMatrix(sumarMatrices(matrizA, matrizB));
-		imprimirMatrix((rotarMatriz(matriz)));
+		imprimirMatrix((rotarMatrizNoCuadrada(matrizRotadaD)));
 		System.out.println(compararMatrizRotada(matrizA, matrizB));
 		System.out.println(compararMatrizRotada(matriz, matrizRotadaI));
 

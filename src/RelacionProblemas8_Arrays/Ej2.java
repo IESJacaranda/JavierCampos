@@ -5,8 +5,20 @@ import java.util.Scanner;
 import EjerciciosArrays.EjerciciosMatrices;
 
 public class Ej2 {
-
+	static Scanner teclado= new Scanner(System.in);
+	public static int[] desplazar1Derecha(int[]lista) {
+		int ultimoElemento=lista[lista.length-1];
+		for(int i=lista.length-1; i>0; i--) {
+			
+			lista[i]=lista[i-1];
+			
+	}
+		lista[0]=ultimoElemento;
+		return lista;
+	}
+	
 	public static void main(String[] args) {
+		/*
 		Scanner teclado= new Scanner(System.in);
 		
 		int longitudLista=10;
@@ -24,8 +36,11 @@ public class Ej2 {
 				System.out.println("Introduce otro valor de la lista");
 			}
 		}
+		*/
+		int[] listaA= {1,2,3,4};
 		
-		EjerciciosMatrices.imprimirVector(lista);
+		//EjerciciosMatrices.imprimirVector(lista);
+		EjerciciosMatrices.imprimirVector(desplazar1Derecha(listaA));
 	}
 	
 

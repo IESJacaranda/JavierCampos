@@ -63,7 +63,7 @@ public static void imprimirMatrix(int[][] matriz) {
 		}
 
 //Imprimir vectores
-public static void imprimirVector(int[] vector) {
+public static String imprimirVector(int[] vector) {
 	
 	
 	
@@ -86,7 +86,7 @@ public static void imprimirVector(int[] vector) {
 		
 		
 	}
-	System.out.println("["+ cadena +"]");
+	return ("["+ cadena +"]");
 		
 			
 		}

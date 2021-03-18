@@ -17,6 +17,20 @@ public class Ej2 {
 		return lista;
 	}
 	
+	public final static int MAX_ITERACIONES=10;
+	
+	public static void foo() {
+		Scanner teclado= new Scanner(System.in);
+		int[] vector = new int[MAX_ITERACIONES];
+		
+		for(int i=0; i<MAX_ITERACIONES; i++) {
+			System.out.println("Introduce el numero en la posicion ("+ (i+1)+"/"+MAX_ITERACIONES+"): ");
+			vector[i]= Integer.parseInt(teclado.nextLine());
+		}
+		EjerciciosMatrices.imprimirVector((vector));
+		EjerciciosMatrices.imprimirVector((desplazar1Derecha(vector)));
+		
+	}
 	public static void main(String[] args) {
 		/*
 		Scanner teclado= new Scanner(System.in);
@@ -39,8 +53,10 @@ public class Ej2 {
 		*/
 		int[] listaA= {1,2,3,4};
 		
+		
 		//EjerciciosMatrices.imprimirVector(lista);
-		EjerciciosMatrices.imprimirVector(desplazar1Derecha(listaA));
+		//EjerciciosMatrices.imprimirVector(desplazar1Derecha(listaA));
+		foo();
 	}
 	
 

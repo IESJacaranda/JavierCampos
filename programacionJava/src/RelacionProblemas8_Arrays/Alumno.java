@@ -19,7 +19,7 @@ public class Alumno extends Persona implements Comparable<Alumno>{
 	
 
 
-/* comparado por nota
+ //comparado por nota
 	@Override
 	public int compareTo(Alumno o) {
 		int compareResult =0;
@@ -34,15 +34,15 @@ public class Alumno extends Persona implements Comparable<Alumno>{
 		}
 		return compareResult;
 	}
-*/
-	
+
+	/*
 	@Override
 	public int compareTo(Alumno o) {
 		
 		return this.getNombre().compareTo(o.getNombre());
 	}
 	
-	
+	*/
 
 	public double getNota() {
 		return nota;

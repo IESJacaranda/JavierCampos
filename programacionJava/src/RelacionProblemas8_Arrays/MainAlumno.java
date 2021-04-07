@@ -19,6 +19,9 @@ public class MainAlumno {
 		System.out.println(primeroB.getAlumnosAprobados());
 		System.out.println(primeroB.getAlumnosSuspensos());
 		System.out.println(primeroB.getNotaMediaClase());
+		System.out.println(primeroB.getMaximaNota());
+		System.out.println(primeroB.getMinimaNota());
+		System.out.println(primeroB.getAlumnosSuperanNota(3));
 		
 		
 

@@ -1,6 +1,7 @@
 package RelacionProblemas8_Arrays;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Clase {
@@ -52,7 +53,41 @@ public class Clase {
 		return result;
 	}
 	
-
+	//De esta forma tenemos los metodos de maxima y minima nota mas reducido
+	
+	public String getMaximaNota() {
+		return getNotaLimiteDeClase(true);
+	}
+	
+	public String getMinimaNota() {
+		return getNotaLimiteDeClase(false);
+	}
+	
+	//Lo que hacemos es agrupar las dos condiciones de maxima y minima nota 
+	//Le pasamos un valor booleano que lo recibe de los metodos anteriores y 
+	//con esto elegimos la opcion que se pide
+	private String getNotaLimiteDeClase(boolean maximaNota) {
+		String result="No hay alumnos";
+		if(!this.alumnos.isEmpty()) {
+			Collections.sort(this.alumnos);
+			int posicion = maximaNota? this.alumnos.size()-1 : 0;
+			String mensaje= maximaNota ? "máxima" : "mínima";
+			result = "La "+mensaje+ " nota es: " + this.alumnos.get(posicion).getNota();
+		}
+		return result;
+	}
+	
+	public String getAlumnosSuperanNota(double notaCorte) {
+		StringBuilder aprobados = new StringBuilder("Lista de alumnos que superan la nota es: \n");
+		for(int i=0; i<alumnos.size();i++) {
+			Alumno al = alumnos.get(i);
+			if(al.getNota()>=notaCorte) {
+				aprobados.append(al.toString()+"\n");
+			}
+		}
+		return aprobados.toString();
+	}
+	
 	
 	
 	

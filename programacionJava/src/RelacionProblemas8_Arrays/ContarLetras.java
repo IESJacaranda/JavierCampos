@@ -3,7 +3,7 @@ package RelacionProblemas8_Arrays;
 import java.util.ArrayList;
 
 public class ContarLetras {
-	private String letras="abcdefghijklmnñopqrstuvwxyz";
+	private final String letras="abcdefghijklmnñopqrstuvwxyz";
 	private int[] ocurrencias = new int[letras.length()];
 	
 	public ContarLetras(){

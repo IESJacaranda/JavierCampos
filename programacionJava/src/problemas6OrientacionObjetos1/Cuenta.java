@@ -1,25 +1,32 @@
 package problemas6OrientacionObjetos1;
 
+import EjemploEnum.Bonificacion;
+import EjemploEnum.Titular;
+
 public class Cuenta {
 	private int numeroReintegros;
 	private int numeroIngresos;
 	private double saldo;
+	public Titular titular;
+	public Bonificacion bonificacion;
 	
-	public Cuenta() {}
 	
-	public Cuenta(double saldo) {
+
+	
+	public Cuenta(double saldo, Titular titular) {
 		this.saldo = saldo;
+		this.titular=titular;
 	}
 	
 	
 	//operacion 1
-	public void hacerReintegro(double reintegro) {
+	public void hacerReintegro(double reintegro) throws Exception{
 		if (saldo>0 && saldo >= reintegro && reintegro>0) {
 			saldo=saldo-reintegro;
 			numeroReintegros++;
 		}
 		else {
-			System.out.println("La operacion no se puede realizar");
+			throw new Exception("La operacion no se puede realizar");
 		}
 		
 	}

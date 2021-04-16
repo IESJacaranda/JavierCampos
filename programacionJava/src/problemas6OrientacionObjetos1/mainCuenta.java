@@ -1,9 +1,12 @@
 package problemas6OrientacionObjetos1;
 import java.util.Scanner;
 
+import EjemploEnum.CuentaJoven;
+import EjemploEnum.Titular;
+
 public class mainCuenta {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		Scanner teclado=new Scanner(System.in);
 		double cantidad=-1;
 		int opcion=0;
@@ -14,7 +17,9 @@ public class mainCuenta {
 			System.out.println("Ingresa la cantidad inicial: ");
 			cantidad=teclado.nextInt();
 		}
-		Cuenta cuenta1 = new Cuenta(cantidad);
+		
+		Titular titular1 = new Titular("Javier", 18);
+		Cuenta cuenta1= new CuentaJoven(cantidad, titular1);
 		
 		System.out.println("1.Hacer un reintegro.\n"
 				+ "2.Hacer un ingreso.\n"
@@ -25,7 +30,13 @@ public class mainCuenta {
 		while (opcion==1 || opcion==2 || opcion==3 || opcion==4) {
 			if (opcion==1) {
 				System.out.println("Introduzca la opcion a reintegrar");
-				cuenta1.hacerReintegro(teclado.nextInt());
+					try {
+						cuenta1.hacerReintegro(teclado.nextInt());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());;
+					}
+				
 			}
 			else if (opcion==2){
 				System.out.println("Introduzca la opcion a ingresar");
